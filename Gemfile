@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'kindle-highlights'
-gem 'twitter'
+gem 'evernote_oauth'
 gem 'dotenv'
+gem 'activesupport'
 
 group :development do
   gem 'pry'

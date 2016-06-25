@@ -16,8 +16,8 @@ class JpKindleHighlights < KindleHighlights::Client
     end
 
     {
-      book_title:  page.search('span.title').text.gsub(/\(Japanese Edition\)/, ''),
-      book_author: page.search('span.author').text.gsub(/\A by /, '').strip,
+      title:  page.search('span.title').text.gsub(/\(Japanese Edition\)|\n.*\z/, ''),
+      author: page.search('span.author').text.gsub(/\A by /, '').strip,
       highlights:  highlights
     }
   end
