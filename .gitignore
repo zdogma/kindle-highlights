@@ -10,7 +10,7 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
-/log/
+/log/*
 
 ## Documentation cache and generated files:
 /.yardoc/
