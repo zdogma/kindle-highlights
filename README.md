@@ -1,8 +1,7 @@
 # kindle-highlights
 
 ## Description
-kindle の highlight ページをスクレイピングして取得する。  
-現在は twitter の自分の DM に highlight をランダムで送りつける機能を実装している。
+kindle の highlight ページをスクレイピングして取得する。
 
 ## Environment
 ```
@@ -55,7 +54,7 @@ EVERNOTE_DEVELOPER_TOKEN=
 
 ## Usage
 ```
-bundle exec ruby kindle_highlight.rb
+bundle exec ruby kindle_evernote.rb
 ```
 
 ## Contribution
