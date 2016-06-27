@@ -23,13 +23,14 @@ asins.each do |asin|
   book = kindle.highlights_for(asin)
   next if book[:highlights].blank?
 
+  search_keyword = "#{asin}-#{ENV['USER']}"
   note = Evernote::Note.new(
-    title: "[★#{book[:highlights].count}] #{book[:title]} / #{book[:author]} (#{asin})",
+    title: "[★#{book[:highlights].count}] #{book[:title]} / #{book[:author]} (#{search_keyword})",
     content: book[:highlights].map { |highlight|
       "<b>『#{highlight[:text]}』</b><br /><font color='gray'>(#{CGI.escape(highlight[:location_href])})</font><br /><br />"
     }.join("\n"),
     notebook_name: KINDLE_NOTEBOOK,
-    search_keyword: asin
+    search_keyword: "#{search_keyword}"
   )
   if note.update
     logger.info "CREATED #{asin} #{book[:title]}"
