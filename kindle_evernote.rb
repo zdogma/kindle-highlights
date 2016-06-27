@@ -30,7 +30,7 @@ asins.each do |asin|
       "<b>『#{highlight[:text]}』</b><br /><font color='gray'>(#{CGI.escape(highlight[:location_href])})</font><br /><br />"
     }.join("\n"),
     notebook_name: KINDLE_NOTEBOOK,
-    search_keyword: "#{search_keyword}"
+    search_keyword: search_keyword
   )
   if note.update
     logger.info "CREATED #{asin} #{book[:title]}"
